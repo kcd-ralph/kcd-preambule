@@ -20,7 +20,7 @@
     <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://kcd-ralph.github.io/kcd-preambule/taskpane.html"/>
+    <SourceLocation DefaultValue="https://kcd-ralph.github.io/kcd-preambule/src/taskpane/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
@@ -73,8 +73,8 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://kcd-ralph.github.io/kcd-preambule/"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://kcd-ralph.github.io/kcd-preambule/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://kcd-ralph.github.io/kcd-preambule/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://kcd-ralph.github.io/kcd-preambule/src/commands/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://kcd-ralph.github.io/kcd-preambule/src/taskpane/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Bienvenue dans le générateur de préambule KCD"/>
