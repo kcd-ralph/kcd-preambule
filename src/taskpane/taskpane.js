@@ -47,7 +47,7 @@ Office.onReady(() => {
 
 async function loadReports() {
   try {
-    const response = await fetch("titles.json");
+    const response = await fetch("https://kcd-ralph.github.io/kcd-preambule/src/titles.json");
     reports = await response.json();
 
     const select = document.getElementById("report-select");
