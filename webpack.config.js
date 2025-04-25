@@ -59,22 +59,25 @@ module.exports = async (env, options) => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: "assets/*",
-            to: "assets/[name][ext][query]",
+            from: "src/titles.json",
+            to: "titles.json"
+          },
+          {
+            from: "assets",
+            to: "assets"
           },
           {
             from: "manifest*.xml",
-            to: "[name]" + "[ext]",
+            to: "[name][ext]",
             transform(content) {
-              if (dev) {
-                return content;
-              } else {
-                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-              }
+              return dev
+                ? content
+                : content.toString().replace(new RegExp(urlDev, "g"), urlProd);
             },
           },
         ],
       }),
+          
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
@@ -87,7 +90,10 @@ module.exports = async (env, options) => {
       },
       server: {
         type: "https",
-        options: env.WEBPACK_BUILD || options.https !== undefined ? options.https : await getHttpsOptions(),
+        options:
+          env.WEBPACK_BUILD || options.https !== undefined
+            ? options.https
+            : await getHttpsOptions(),
       },
       port: process.env.npm_package_config_dev_server_port || 3000,
     },
